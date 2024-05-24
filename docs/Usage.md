@@ -6,7 +6,7 @@ nav_order: 3
 
 # Usage
 
-The framework has abstracted all the setup parameters into the file `config.py`.
+The framework has abstracted all the setup parameters into the file `config.py`. Configure global settings then run `python optimize_main.py`
 
 ```python
 # Basic settings

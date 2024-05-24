@@ -17,11 +17,9 @@ hyperparameters (these are the parameters to be varied):
   parameter Real T_set = 293.15 "Setpoint temperature in Kelvin";
 ```
 
-A Python script [Optimize_SimpleHeatingSystem.py](./Optimize_EnergySystem.py) to perform hyperparameter optimization.
-
 **Procedure:**
 
-<u>1. Configuration of global setting for the optimization</u>
+<u>1. Configurate global settings for the optimization</u>
 
 <u>2. Run Python script: `python optimize_main.py`</u>
 
