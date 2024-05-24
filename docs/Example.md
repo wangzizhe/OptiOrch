@@ -108,4 +108,4 @@ Solution 1: Energy = 119249.50, Cost = 11924.95, Comfort = 555.79,
 
 After that you will see the result of Pareto Front. The top left results is what we want.
 
-![Pareto Front](./diagrams/SimpleHeatingSystem_Pareto_Front.png)
+![Pareto Front](../assets/SimpleHeatingSystem_Pareto_Front.png)

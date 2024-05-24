@@ -8,9 +8,9 @@ permalink: /
 
 # MOO4Modelica
 
-https://git-st.inf.tu-dresden.de/wang/MOO4Modelica
-
 ## Framework
+
+https://git-st.inf.tu-dresden.de/wang/MOO4Modelica
 
 #### Highlights:
 
@@ -32,5 +32,3 @@ https://git-st.inf.tu-dresden.de/wang/MOO4Modelica
 * `optimize_main.py`: main optimization script
 * `optimization_libraries`: initialization libraries and algorithms
 * `parallel_computing.py`: parallel_computing
-
-(*) This is another one-script Python file provided, which corresponds to the 4 scripts. 

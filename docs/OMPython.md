@@ -47,4 +47,4 @@ Plot result: True
 Plot completed
 ```
 
-After that you will see the simulation result:![plot diagram](../../diagrams/bouncing_ball_results.png)
+After that you will see the simulation result:![plot diagram](../assets/bouncing_ball_results.png)
