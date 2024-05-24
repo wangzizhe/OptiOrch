@@ -8,9 +8,10 @@ permalink: /
 
 # MOO4Modelica
 
-## Framework
-
+Multi-objective Optimization framework for Modelica.
 https://git-st.inf.tu-dresden.de/wang/MOO4Modelica
+
+![framework](./assets/MOO4Modelica.png)
 
 #### Highlights:
 

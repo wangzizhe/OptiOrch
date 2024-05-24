@@ -4,7 +4,7 @@ title: OMPython
 nav_order: 2
 ---
 
-## Preliminary Knowledge: OMPython
+# Preliminary Knowledge: OMPython
 
 This shows an example of using OMPython to simulate a Modelica model
 

@@ -1,8 +1,5 @@
 title: MOO4Modelica
-description: Multi-objective Optimization framework/pipeline for Modelica
+description: Multi-objective Optimization framework for Modelica
 theme: just-the-docs
 
 url: https://wangzizhe.github.io/MOO4Modelica
-
-aux_links:
-  Template Repository: https://wangzizhe.github.io/MOO4Modelica
