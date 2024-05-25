@@ -26,7 +26,7 @@ GitLab Repo: [https://git-st.inf.tu-dresden.de/wang/MOO4Modelica](https://git-st
 ```
 ./src/ 
 |-- config.py 
-|-- main_optimize.py 
+|-- optimize_main.py 
 |-- parallel_computing.py
 |-- optimization_libraries.py 
 ```
