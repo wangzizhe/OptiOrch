@@ -6,7 +6,7 @@ nav_order: 3
 
 # Usage
 
-## Generate Feature Tree/Model from A Modelica File (Optional)
+## I. Generate Feature Tree/Model from A Modelica File (Optional)
 
 *This step is optional, the idea is mainly for analyzing and understanding variables and parameters in large-scale models because they are normally nested models.*
 
@@ -186,7 +186,7 @@ The feature model will be then saved as `feature_model.json`. It looks like this
 }
 ```
 
-## Run Optimization
+## II. Run Optimization
 
 The framework has abstracted all the setup parameters into the file `config.py`. Configure global settings then run `python optimize_main.py`
 
