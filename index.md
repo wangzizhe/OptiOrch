@@ -44,10 +44,3 @@ GitLab Repo: [https://git-st.inf.tu-dresden.de/wang/MOO4Modelica](https://git-st
 * `modelica.g4`: an ANTLR4 grammar for Modelica files
 * `parse_modelica.py`: parse a Modelica model to extract it components and their parameters
 * `feature_model.py`: create a feature model and add the extracted components
-
-
-
-
-
-
-

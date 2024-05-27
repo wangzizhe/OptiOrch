@@ -17,11 +17,279 @@ hyperparameters (these are the parameters to be varied):
   parameter Real T_set = 293.15 "Setpoint temperature in Kelvin";
 ```
 
-**Procedure:**
+### I. Generate Feature Tree/Model from A Modelica File (Optional)
 
-<u>1. Configurate global settings for the optimization</u>
+1. Generate the parser code using ANTLR4
 
-<u>2. Run Python script: `python optimize_main.py`</u>
+```
+antlr4 -Dlanguage=Python3 modelica.g4
+```
+
+There are files which haven been generated, e.g.:
+* `modelicaLexer.py`
+* `modelicaParser.py`
+* `modelicaListener.py`
+
+2. Configuration
+
+configurate `parse_modelica.py`
+
+```python
+# Configuration
+file_name = 'SimpleHeatingSystem.mo'
+```
+
+configurate `feature_model.py`
+
+```python
+# Configuration
+model_name = 'SimpleHeatingSystem.mo'
+output_file = 'feature_model.json'
+include_equations = True  # set to "False" if equations should be excluded
+```
+
+3. Parse the Modelica model and generate the feature tree
+
+```
+python feature_model.py
+```
+
+You will see the result in the terminal:
+
+```
+SimpleHeatingSystem
+├── parameter Real (Q_max)
+│   └── value=5000
+├── parameter Real (T_set)
+│   └── value=293.15
+├── parameter Real (efficiency)
+│   └── value=0.9
+├── parameter Real (hysteresis)
+│   └── value=0.5
+├── parameter Real (T_comfort)
+│   └── value=293.15
+├── Real (Q_heat)
+├── Real (T_room)
+│   └── value=()
+├── Real (cost)
+│   └── value=()
+├── Real (energy)
+│   └── value=()
+├── Real (comfort)
+│   └── value=()
+├── Boolean (heater_on)
+│   └── value=()
+├── constant Real (c_p)
+│   └── value=1005
+├── constant Real (m_air)
+│   └── value=50
+├── Real (accumulated_discomfort)
+│   └── value=()
+├── Equation 1: der(T_room)=(Q_heat*efficiency-(T_room-273.15))/(m_air*c_p)
+├── Equation 2: heater_on=ifT_room<T_set-hysteresisthentrueelseifT_room>T_set+hysteresisthenfalseelsepre(heater_on)
+├── Equation 3: Q_heat=ifheater_onthenQ_maxelse0
+├── Equation 4: der(energy)=Q_heat*efficiency
+├── Equation 5: der(cost)=0.1*Q_heat*efficiency
+├── Equation 6: der(accumulated_discomfort)=abs(T_room-T_comfort)
+└── Equation 7: der(comfort)=ifheater_onthenefficiency*Q_heat/(accumulated_discomfort+1)else0
+```
+
+The feature model will be then saved as `feature_model.json`:
+
+```json
+{
+    "name": "SimpleHeatingSystem",
+    "children": [
+        {
+            "name": "parameter Real (Q_max)",
+            "children": [
+                {
+                    "name": "value=5000",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "parameter Real (T_set)",
+            "children": [
+                {
+                    "name": "value=293.15",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "parameter Real (efficiency)",
+            "children": [
+                {
+                    "name": "value=0.9",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "parameter Real (hysteresis)",
+            "children": [
+                {
+                    "name": "value=0.5",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "parameter Real (T_comfort)",
+            "children": [
+                {
+                    "name": "value=293.15",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "Real (Q_heat)",
+            "children": []
+        },
+        {
+            "name": "Real (T_room)",
+            "children": [
+                {
+                    "name": "value=()",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "Real (cost)",
+            "children": [
+                {
+                    "name": "value=()",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "Real (energy)",
+            "children": [
+                {
+                    "name": "value=()",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "Real (comfort)",
+            "children": [
+                {
+                    "name": "value=()",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "Boolean (heater_on)",
+            "children": [
+                {
+                    "name": "value=()",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "constant Real (c_p)",
+            "children": [
+                {
+                    "name": "value=1005",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "constant Real (m_air)",
+            "children": [
+                {
+                    "name": "value=50",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "Real (accumulated_discomfort)",
+            "children": [
+                {
+                    "name": "value=()",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "Equation 1: der(T_room)=(Q_heat*efficiency-(T_room-273.15))/(m_air*c_p)",
+            "children": []
+        },
+        {
+            "name": "Equation 2: heater_on=ifT_room<T_set-hysteresisthentrueelseifT_room>T_set+hysteresisthenfalseelsepre(heater_on)",
+            "children": []
+        },
+        {
+            "name": "Equation 3: Q_heat=ifheater_onthenQ_maxelse0",
+            "children": []
+        },
+        {
+            "name": "Equation 4: der(energy)=Q_heat*efficiency",
+            "children": []
+        },
+        {
+            "name": "Equation 5: der(cost)=0.1*Q_heat*efficiency",
+            "children": []
+        },
+        {
+            "name": "Equation 6: der(accumulated_discomfort)=abs(T_room-T_comfort)",
+            "children": []
+        },
+        {
+            "name": "Equation 7: der(comfort)=ifheater_onthenefficiency*Q_heat/(accumulated_discomfort+1)else0",
+            "children": []
+        }
+    ]
+}
+```
+
+### II. Run Optimization
+
+1. Configurate global settings for the optimization
+
+```python
+# Basic settings
+SIMULATION_STOP_TIME = 2000  # in seconds
+MODEL_NAME = "SimpleHeatingSystem"
+MODEL_FILE = f"{MODEL_NAME}.mo"
+
+current_directory = os.getcwd()
+model_path = os.path.join(current_directory, MODEL_FILE)
+
+# Parameters and result variables
+PARAMETERS = ["Q_max", "T_set"]
+RESULTS = ["energy", "cost", "comfort"]
+
+# Parameter bounds
+PARAM_BOUNDS = {
+    "Q_max": (1000, 5000),
+    "T_set": (280, 310),
+}
+
+# Algorithm selection
+# Options: 'pymoo.NSGA2', 'pymoo.NSGA3', 'pymoo.CMAES', 'scipy.de', 'scipy.minimize'
+OPTIMIZATION_LIBRARY = 'pymoo'
+ALGORITHM_NAME = 'NSGA2'
+
+# Optimization settings
+POP_SIZE = 5  # Population size for NSGA2
+N_GEN = 5     # Number of generations
+
+# Parallel processing
+N_JOBS = -1  # Options: '-1', '1', 'n', 'None'
+```
+
+2. Run Python script: `python optimize_main.py`
 
 You will see 
 
