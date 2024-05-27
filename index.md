@@ -26,21 +26,23 @@ GitLab Repo: [https://git-st.inf.tu-dresden.de/wang/MOO4Modelica](https://git-st
 
 ```
 ./src/ 
-|-- config.py 
-|-- optimize_main.py 
-|-- parallel_computing.py
-|-- optimization_libraries.py 
-(for transforming to feature model)
-|-- modelica.g4
-|-- parse_modelica.py
-|-- feature_model.py
+(Feature Model Transformation)
+	|-- modelica.g4
+	|-- parse_modelica.py
+	|-- feature_model.py
+(Optimization Operation)
+	|-- config.py 
+	|-- optimize_main.py 
+	|-- parallel_computing.py
+	|-- optimization_libraries.py 
 ```
 
-* `config.py`: global settings and configurations
-* `optimize_main.py`: main optimization script
-* `parallel_computing.py`: parallel_computing
-* `optimization_libraries`: initialization libraries and algorithms
-* (for transforming to feature model)
-* `modelica.g4`: an ANTLR4 grammar for Modelica files
-* `parse_modelica.py`: parse a Modelica model to extract it components and their parameters
-* `feature_model.py`: create a feature model and add the extracted components
+* (Feature Model Transformation)
+  * `modelica.g4`: an ANTLR4 grammar for Modelica files
+  * `parse_modelica.py`: parse a Modelica model to extract it components and their parameters
+  * `feature_model.py`: create a feature model and add the extracted components
+* (Optimization Operation)
+  * `config.py`: global settings and configurations
+  * `optimize_main.py`: main optimization script
+  * `parallel_computing.py`: parallel_computing
+  * `optimization_libraries`: initialization libraries and algorithms
