@@ -259,21 +259,29 @@ The feature model will be then saved as `feature_model.json`:
 
 ```python
 # Basic settings
-SIMULATION_STOP_TIME = 2000  # in seconds
 MODEL_NAME = "SimpleHeatingSystem"
 MODEL_FILE = f"{MODEL_NAME}.mo"
-
-current_directory = os.getcwd()
-model_path = os.path.join(current_directory, MODEL_FILE)
+MODEL_PATH = os.path.join(os.getcwd(), MODEL_FILE)
+SIMULATION_STOP_TIME = 2000  # in seconds
 
 # Parameters and result variables
 PARAMETERS = ["Q_max", "T_set"]
-RESULTS = ["energy", "cost", "comfort"]
+RESULTS = ["energy", "comfort"]
 
-# Parameter bounds
+# Parameter range
 PARAM_BOUNDS = {
     "Q_max": (1000, 5000),
     "T_set": (280, 310),
+}
+
+# Results precision
+PRECISION = 2  # decimal places
+
+# Plot configurations
+PLOT_CONFIG = {
+    "PLOT_X": "Energy Consumption",
+    "PLOT_Y": "Comfort",
+    "PLOT_TITLE": "Pareto Front of Energy Consumption vs Comfort"
 }
 
 # Algorithm selection
