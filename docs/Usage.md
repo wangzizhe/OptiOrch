@@ -10,13 +10,13 @@ nav_order: 3
 
 *This step is optional, the idea is mainly for analyzing and understanding variables and parameters in large-scale models because they are normally nested models.*
 
-1. Generate the parser code using ANTLR4
+**Step 1:** Generate the parser code using ANTLR4
 
 ```
 antlr4 -Dlanguage=Python3 modelica.g4
 ```
 
-2. Configuration
+**Step 2:** Configuration
 
 configurate `parse_modelica.py`
 
@@ -34,7 +34,7 @@ output_file = 'feature_model.json'
 include_equations = True  # set to "False" if equations should be excluded
 ```
 
-3. Parse the Modelica model and generate the feature tree
+**Step 3:** Parse the Modelica model and generate the feature tree
 
 ```
 python feature_model.py
@@ -44,18 +44,19 @@ python feature_model.py
 
 The framework has abstracted all the setup parameters into the file `config.py`. 
 
-1. Configure global settings in `config.py` 
+**Step 1:** Configure global settings in `config.py` 
 
 ```python
 # Basic settings
 MODEL_NAME = "SimpleHeatingSystem"
 MODEL_FILE = f"{MODEL_NAME}.mo"
 MODEL_PATH = os.path.join(os.getcwd(), MODEL_FILE)
-SIMULATION_STOP_TIME = 2000  # in seconds
+SIMULATION_STOP_TIME = 3000  # in seconds
 
 # Parameters and result variables
 PARAMETERS = ["Q_max", "T_set"]
 RESULTS = ["energy", "comfort"]
+MAXIMIZE = ["comfort"]  # List of objectives to maximize
 
 # Parameter range
 PARAM_BOUNDS = {
@@ -79,11 +80,13 @@ OPTIMIZATION_LIBRARY = 'pymoo'
 ALGORITHM_NAME = 'NSGA2'
 
 # Optimization settings
-POP_SIZE = 5  # Population size for NSGA2
-N_GEN = 5     # Number of generations
+POP_SIZE = 50  # Population size for NSGA2
+N_GEN = 100    # Number of generations
 
 # Parallel processing
 N_JOBS = -1  # Options: '-1', '1', 'n', 'None'
 ```
 
-2. run `python optimize_main.py`
+**Step 2:** run `python optimize_main.py`
+
+Now, take a cup of tee and wait for the results xD
