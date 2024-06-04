@@ -262,11 +262,12 @@ The feature model will be then saved as `feature_model.json`:
 MODEL_NAME = "SimpleHeatingSystem"
 MODEL_FILE = f"{MODEL_NAME}.mo"
 MODEL_PATH = os.path.join(os.getcwd(), MODEL_FILE)
-SIMULATION_STOP_TIME = 2000  # in seconds
+SIMULATION_STOP_TIME = 3000  # in seconds
 
 # Parameters and result variables
 PARAMETERS = ["Q_max", "T_set"]
 RESULTS = ["energy", "comfort"]
+MAXIMIZE = ["comfort"]  # List of objectives to maximize
 
 # Parameter range
 PARAM_BOUNDS = {
@@ -290,8 +291,8 @@ OPTIMIZATION_LIBRARY = 'pymoo'
 ALGORITHM_NAME = 'NSGA2'
 
 # Optimization settings
-POP_SIZE = 5  # Population size for NSGA2
-N_GEN = 5     # Number of generations
+POP_SIZE = 50  # Population size for NSGA2
+N_GEN = 100     # Number of generations
 
 # Parallel processing
 N_JOBS = -1  # Options: '-1', '1', 'n', 'None'
@@ -308,46 +309,52 @@ You will see
 like this:
 
 ```shell
+Number of variables: 2
+Lower bounds: [1000  280]
+Upper bounds: [5000  310]
+
 Load model result in worker: True
 Load model result in worker: True
 Load model result in worker: True
 Load model result in worker: True
 Load model result in worker: True
 
-Parameters set: {'Q_max': 1889.86, 'T_set': 307.42}
-Parameters set: {'Q_max': 4459.37, 'T_set': 282.12}
-Parameters set: {'Q_max': 3851.85, 'T_set': 298.54}
-Parameters set: {'Q_max': 2924.46, 'T_set': 280.58}
-Parameters set: {'Q_max': 1375.1, 'T_set': 282.02}
+Parameters set: {'Q_max': 4173.26, 'T_set': 284.49}
+Parameters set: {'Q_max': 1220.76, 'T_set': 305.78}
+Parameters set: {'Q_max': 1951.81, 'T_set': 299.48}
+Parameters set: {'Q_max': 4675.92, 'T_set': 289.72}
+Parameters set: {'Q_max': 2044.53, 'T_set': 305.47}
 
-Simulation results: {'energy': 1513678.09, 'cost': 151367.81, 'comfort': 1255.39}
-Simulation results: {'energy': 1054423.49, 'cost': 105442.35, 'comfort': 2203.89}
-Simulation results: {'energy': 220875.05, 'cost': 22087.51, 'comfort': 664.14}
-Simulation results: {'energy': 1054423.49, 'cost': 105442.35, 'comfort': 2203.89}
-Simulation results: {'energy': 281742.21, 'cost': 28174.22, 'comfort': 1317.24}
+...
 ```
 
 The simulation is runing:
 
 ```shell
-==========================================================
-n_gen  |  n_eval  | n_nds  |      eps      |   indicator
-==========================================================
-     1 |        5 |      2 |             - |             -
-     2 |       10 |      2 |  5.7876254181 |         ideal
-     3 |       15 |      3 |  0.9710601290 |         ideal
-     4 |       20 |      2 |  1.1370485530 |         ideal
-     5 |       25 |      2 |  0.1184009363 |         ideal
+Simulation results: {'energy': 344482.35, 'comfort': 1873.97}
+OMC session closed successfully.
+Simulation results: {'energy': 1490363.54, 'comfort': 836.97}
+OMC session closed successfully.
+Simulation results: {'energy': 608112.5, 'comfort': 2298.91}
+OMC session closed successfully.
+Simulation results: {'energy': 1158015.95, 'comfort': 1213.1}
+OMC session closed successfully.
+Simulation results: {'energy': 778781.79, 'comfort': 1521.05}
+OMC session closed successfully.
+...
 ```
 
 You will see the results at the end of simulation like this:
 
 ```shell
 Optimization Results:
-Solution 0: Energy = 140592.49, Cost = 14059.25, Comfort = 517.23,
-Solution 1: Energy = 119249.50, Cost = 11924.95, Comfort = 555.79,
+Solution 0: Energy = 118249.77, Comfort = 1817.59,
+Solution 1: Energy = 118249.77, Comfort = 1817.59,
+Solution 2: Energy = 1682427.04, Comfort = 3073.43,
+Solution 3: Energy = 492612.01, Comfort = 2191.09,
+Solution 4: Energy = 968440.92, Comfort = 2686.64,
+Solution 5: Energy = 631214.26, Comfort = 2455.39,
+...
 ```
 
-After that you will see the result of Pareto Front. The top left results is what we want.
-
-![Pareto Front](../assets/SimpleHeatingSystem_Pareto_Front.png)
+After that you will see the result of Pareto Front. 
