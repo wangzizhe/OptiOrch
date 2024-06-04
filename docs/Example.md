@@ -19,7 +19,7 @@ hyperparameters (these are the parameters to be varied):
 
 ### I. Generate Feature Tree/Model from A Modelica File (Optional)
 
-1. Generate the parser code using ANTLR4
+**Step 1:** Generate the parser code using ANTLR4
 
 ```
 antlr4 -Dlanguage=Python3 modelica.g4
@@ -30,7 +30,7 @@ There are files which haven been generated, e.g.:
 * `modelicaParser.py`
 * `modelicaListener.py`
 
-2. Configuration
+**Step 2:** Configuration
 
 configurate `parse_modelica.py`
 
@@ -48,7 +48,7 @@ output_file = 'feature_model.json'
 include_equations = True  # set to "False" if equations should be excluded
 ```
 
-3. Parse the Modelica model and generate the feature tree
+**Step 3:** Parse the Modelica model and generate the feature tree
 
 ```
 python feature_model.py
@@ -255,7 +255,7 @@ The feature model will be then saved as `feature_model.json`:
 
 ### II. Run Optimization
 
-1. Configurate global settings for the optimization
+**Step 1:** Configurate global settings for the optimization
 
 ```python
 # Basic settings
@@ -298,7 +298,7 @@ N_GEN = 100     # Number of generations
 N_JOBS = -1  # Options: '-1', '1', 'n', 'None'
 ```
 
-2. Run Python script: `python optimize_main.py`
+**Step 2:** Run Python script: `python optimize_main.py`
 
 You will see 
 
