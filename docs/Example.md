@@ -347,14 +347,61 @@ OMC session closed successfully.
 You will see the results at the end of simulation like this:
 
 ```shell
-Optimization Results:
-Solution 0: Energy = 118249.77, Comfort = 1817.59,
-Solution 1: Energy = 118249.77, Comfort = 1817.59,
-Solution 2: Energy = 1682427.04, Comfort = 3073.43,
-Solution 3: Energy = 492612.01, Comfort = 2191.09,
-Solution 4: Energy = 968440.92, Comfort = 2686.64,
-Solution 5: Energy = 631214.26, Comfort = 2455.39,
 ...
+   100 |     5000 |     50 |  0.0031202395 |             f
+Optimization Results:
+Solution 0: Energy = 1683944.96, Comfort = 3074.81,
+Solution 1: Energy = 118249.77, Comfort = 1817.60,
+Solution 2: Energy = 1683944.96, Comfort = 3074.81,
+Solution 3: Energy = 118249.77, Comfort = 1817.60,
+Solution 4: Energy = 990666.54, Comfort = 2706.51,
+Solution 5: Energy = 911860.57, Comfort = 2648.50,
+Solution 6: Energy = 515215.82, Comfort = 2359.04,
+Solution 7: Energy = 835602.55, Comfort = 2606.62,
+Solution 8: Energy = 745744.39, Comfort = 2517.19,
+Solution 9: Energy = 1157466.41, Comfort = 2821.38,
+Solution 10: Energy = 454719.13, Comfort = 2303.91,
+Solution 11: Energy = 1296560.30, Comfort = 2904.91,
+Solution 12: Energy = 374082.06, Comfort = 2223.35,
+Solution 13: Energy = 283399.71, Comfort = 2117.14,
+Solution 14: Energy = 716472.49, Comfort = 2491.76,
+Solution 15: Energy = 248647.78, Comfort = 2069.58,
+Solution 16: Energy = 1366392.43, Comfort = 2942.05,
+Solution 17: Energy = 1021489.97, Comfort = 2728.62,
+Solution 18: Energy = 1517262.96, Comfort = 3011.96,
+Solution 19: Energy = 1097303.16, Comfort = 2781.52,
+Solution 20: Energy = 136370.09, Comfort = 1864.18,
+Solution 21: Energy = 158015.71, Comfort = 1913.03,
+Solution 22: Energy = 1422577.37, Comfort = 2969.70,
+Solution 23: Energy = 1586150.01, Comfort = 3039.63,
+Solution 24: Energy = 787135.29, Comfort = 2555.69,
+Solution 25: Energy = 1547145.24, Comfort = 3024.26,
+Solution 26: Energy = 1473206.51, Comfort = 2992.92,
+Solution 27: Energy = 404821.56, Comfort = 2255.21,
+Solution 28: Energy = 558581.73, Comfort = 2396.62,
+Solution 29: Energy = 787135.29, Comfort = 2555.69,
+Solution 30: Energy = 1217645.63, Comfort = 2859.06,
+Solution 31: Energy = 864384.88, Comfort = 2620.60,
+Solution 32: Energy = 660473.92, Comfort = 2480.77,
+Solution 33: Energy = 530846.76, Comfort = 2372.74,
+Solution 34: Energy = 347377.37, Comfort = 2194.18,
+Solution 35: Energy = 1256593.65, Comfort = 2882.21,
+Solution 36: Energy = 152981.66, Comfort = 1902.23,
+Solution 37: Energy = 649879.03, Comfort = 2472.21,
+Solution 38: Energy = 892160.79, Comfort = 2636.94,
+Solution 39: Energy = 206851.82, Comfort = 2004.69,
+Solution 40: Energy = 1453971.43, Comfort = 2982.01,
+Solution 41: Energy = 238575.76, Comfort = 2054.81,
+Solution 42: Energy = 184698.05, Comfort = 1965.72,
+Solution 43: Energy = 125296.39, Comfort = 1836.44,
+Solution 44: Energy = 448166.30, Comfort = 2297.71,
+Solution 45: Energy = 1387654.91, Comfort = 2950.49,
+Solution 46: Energy = 1051306.87, Comfort = 2749.67,
+Solution 47: Energy = 298007.19, Comfort = 2135.79,
+Solution 48: Energy = 1064447.73, Comfort = 2758.86,
+Solution 49: Energy = 319668.29, Comfort = 2162.22,
 ```
 
-After that you will see the result of Pareto Front. 
+After that you will see the Pareto front:
+
+![Pareto Front of the Simple Heating System](../assets/SimpleHeatingSystem_Pareto_Front.png) 
