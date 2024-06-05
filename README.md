@@ -1,4 +1,4 @@
-Multi-objective Optimization framework/pipeline for Modelica.
+# A Multi-objective Optimization Framework and Workflow for Modelica.
 
 GitHub Page: https://wangzizhe.github.io/MOO4Modelica
 

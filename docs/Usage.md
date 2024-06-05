@@ -18,14 +18,14 @@ antlr4 -Dlanguage=Python3 modelica.g4
 
 **Step 2:** Configuration
 
-configurate `parse_modelica.py`
+configure `parse_modelica.py`
 
 ```python
 # Configuration
 file_name = 'SimpleHeatingSystem.mo'
 ```
 
-configurate `feature_model.py`
+configure `feature_model.py`
 
 ```python
 # Configuration

@@ -8,7 +8,7 @@ permalink: /
 
 # MOO4Modelica
 
-Multi-objective Optimization framework for Modelica.
+A multi-objective Optimization framework and workflow for Modelica.
 
 GitLab Repo: [https://git-st.inf.tu-dresden.de/wang/MOO4Modelica](https://git-st.inf.tu-dresden.de/wang/MOO4Modelica)
 
@@ -18,7 +18,7 @@ GitLab Repo: [https://git-st.inf.tu-dresden.de/wang/MOO4Modelica](https://git-st
 
 1. **Easy to configure:** All settings and configurations can be defined in `config.py`.
 2. **SoTA libraries and algorithms for MOO:** Support different libraries and algorithms.
-3. **Enable using of** **parallel computing**: For accelerated process. 
+3. **Enable use of** **parallel computing**: For accelerated process. 
 4. **Support transformation into feature models**: To better analyze and understand large-scale models.
 5. **Comprehensive debugging system**: Debugging functions for all critical steps.
 

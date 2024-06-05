@@ -16,7 +16,7 @@ OMPython: OpenModelica Python Interface
 - OpenModelica (add to PATH)
 - OMPython (`pip install OMPython`)
 
-This is how the PATH looks like:
+This is what the PATH looks like:
 
 ```
 %USERPROFILE%\AppData\Local\Programs\Python\Python312\
