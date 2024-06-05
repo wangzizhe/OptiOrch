@@ -1,22 +1,46 @@
 ---
 layout: default
-title: Example
+title: Examples
 nav_order: 4
 ---
 
-# Example
+# Examples
+
+Two test cases: a simple heating system and an electric driving robot.  
+
+## Example 1: Simple Heating System
 
 Case study with a simple heating system [SimpleHeatingSystem.mo](./SimpleHeatingSystem.mo) built in Modelica.
 
-The idea is to heat a room, when the room heats faster, human beings feels more comfortable, but the energy consumption and cost become higher. This system should be optimized to find the **trade-off of energy consumption and comfort**.
+The idea is to heat a room, when the room heats faster, human beings feel more comfortable, but the energy consumption and cost become higher. The **heating power** and **target temperature** should be optimized to find the trade-off between **human comfort** and **energy consumption**.
 
-hyperparameters (these are the parameters to be varied): 
-
-```
-  parameter Real Q_max = 5000 "Maximum heating power in watts";
-  parameter Real T_set = 293.15 "Setpoint temperature in Kelvin";
-```
-
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center;">Parameters</th>
+      <th style="text-align: center;">Objectives</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center;">Heating Power</td>
+      <td style="text-align: center;">Human Comfort</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;">Target Temperature</td>
+      <td style="text-align: center;">Energy Consumption</td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center;"><strong>Goal</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center;">
+        Maximize Human Comfort <br>
+        Minimize Energy Consumption
+      </td>
+    </tr>
+  </tbody>
+</table>
 ### I. Generate Feature Tree/Model from A Modelica File (Optional)
 
 **Step 1:** Generate the parser code using ANTLR4
@@ -25,21 +49,21 @@ hyperparameters (these are the parameters to be varied):
 antlr4 -Dlanguage=Python3 modelica.g4
 ```
 
-There are files which haven been generated, e.g.:
+Some files have been generated, e.g.:
 * `modelicaLexer.py`
 * `modelicaParser.py`
 * `modelicaListener.py`
 
 **Step 2:** Configuration
 
-configurate `parse_modelica.py`
+configure `parse_modelica.py`
 
 ```python
 # Configuration
 file_name = 'SimpleHeatingSystem.mo'
 ```
 
-configurate `feature_model.py`
+configure `feature_model.py`
 
 ```python
 # Configuration
@@ -255,7 +279,7 @@ The feature model will be then saved as `feature_model.json`:
 
 ### II. Run Optimization
 
-**Step 1:** Configurate global settings for the optimization
+**Step 1:** Configure global settings for the optimization
 
 ```python
 # Basic settings
@@ -402,6 +426,45 @@ Solution 48: Energy = 1064447.73, Comfort = 2758.86,
 Solution 49: Energy = 319668.29, Comfort = 2162.22,
 ```
 
-After that you will see the Pareto front:
+After that, you will see the Pareto front:
 
-![Pareto Front of the Simple Heating System](../assets/SimpleHeatingSystem_Pareto_Front.png) 
+![Pareto Front of the simple heating system](../assets/SimpleHeatingSystem_Pareto_Front.png) 
+
+## Example 2: Electric Driving Robot
+
+Case study with an electric driving robot built in Modelica.
+
+The robot should optimize its **driving speed** to find the trade-off between **driving distance** and **energy consumption**.
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center;">Parameter</th>
+      <th style="text-align: center;">Objectives</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2" style="text-align: center;">Driving Speed</td>
+      <td style="text-align: center;">Travel Distance</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;">Energy Consumption</td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center;"><strong>Goal</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align: center;">
+        Maximize Travel Distance <br>
+        Minimize Energy Consumption
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+Configurations in `config.py` have been modified accordingly. 
+
+After the optimization, the Pareto front will show:
+
+![Pareto Front of the electric driving robot](../assets/MaxMoritz_Pareto_Front.png)
