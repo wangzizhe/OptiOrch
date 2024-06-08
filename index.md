@@ -16,11 +16,12 @@ GitLab Repo: [https://git-st.inf.tu-dresden.de/wang/MOO4Modelica](https://git-st
 
 #### Highlights:
 
-1. **Easy to configure:** All settings and configurations can be defined in `config.py`.
-2. **SoTA libraries and algorithms for MOO:** Support different libraries and algorithms.
+1. **Easy to configure:** All settings and configurations can be defined in `config.json`.
+2. **SoTA algorithms for MOO:** Dynamic import of algorithms from *pymoo*.
 3. **Enable use of** **parallel computing**: For accelerated process. 
-4. **Support transformation into feature models**: To better analyze and understand large-scale models.
-5. **Comprehensive debugging system**: Debugging functions for all critical steps.
+4. **Enable use of adaptive instance selection:** Automated search space reduction.
+5. **Support transformation into feature models**: To better analyze and understand large-scale models.
+6. **Comprehensive debugging system**: Debugging functions for all critical steps.
 
 #### Structure:
 
@@ -31,10 +32,13 @@ GitLab Repo: [https://git-st.inf.tu-dresden.de/wang/MOO4Modelica](https://git-st
 	|-- parse_modelica.py
 	|-- feature_model.py
 (Optimization Operation)
-	|-- config.py 
+	|-- config.json
+	|-- config.py
 	|-- optimize_main.py 
 	|-- parallel_computing.py
+	|-- adaptive_instance_selection.py 
 	|-- optimization_libraries.py 
+	|-- evaluate.py
 ```
 
 * (Feature Model Transformation)
@@ -42,7 +46,9 @@ GitLab Repo: [https://git-st.inf.tu-dresden.de/wang/MOO4Modelica](https://git-st
   * `parse_modelica.py`: parse a Modelica model to extract it components and their parameters
   * `feature_model.py`: create a feature model and add the extracted components
 * (Optimization Operation)
-  * `config.py`: global settings and configurations
+  * `config.json` & `config.py`: global settings and configurations
   * `optimize_main.py`: main optimization script
-  * `parallel_computing.py`: parallel_computing
-  * `optimization_libraries`: initialization libraries and algorithms
+  * `parallel_computing.py`: parallel computing
+  * `adaptive_instance_selection.py`: automated search space reduction
+  * `optimization_libraries.py`: dynamic import of algorithms from *pymoo*
+  * `evaluate.py`: performance evaluation (time efficiency, optimization accuracy, additional statistical analysis)
