@@ -12,7 +12,7 @@ A self-sufficient edge computing system to be self-adaptive with MOO4Modelica .
 
 #### Objective
 
-To develop a self-sufficient edge computing system powered by photovoltaic (PV) energy, capable of dynamically adjusting its **CPU cores** and frequency based on **available energy** and **user demand**. The system aims to meet user demand while maximizing energy efficiency for each time unit.
+To develop a self-sufficient edge computing system powered by photovoltaic (PV) energy, capable of dynamically adjusting its **CPU cores** and **frequency** based on **available energy** and **user demand**. The system aims to meet user demand while maximizing energy efficiency for each time unit.
 
 #### Input
 
@@ -27,7 +27,7 @@ To develop a self-sufficient edge computing system powered by photovoltaic (PV) 
 
 #### Outcome 
 
-  A dynamically adaptive edge computing system that efficiently manages its resources based on real-time energy availability and user demand, ensuring sustainable and efficient operation for autonomous vehicles requiring edge computing capabilities.
+A dynamically adaptive edge computing system that efficiently manages its resources based on real-time energy availability and user demand, ensuring sustainable and efficient operation for autonomous vehicles requiring edge computing capabilities.
 
 ## File Structure
 
