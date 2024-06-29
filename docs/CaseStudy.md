@@ -6,13 +6,15 @@ nav_order: 5
 
 # Case Study
 
-A self-sufficient edge computing system to be self-adaptive with MOO4Modelica .
+An orchestration workflow for a self-adaptive edge computing system with MOO4Modelica .
 
 ## Scenario
 
 #### Objective
 
-To develop a self-sufficient edge computing system powered by photovoltaic (PV) energy, capable of dynamically adjusting its **CPU cores** and **frequency** based on **available energy** and **user demand**. The system aims to meet user demand while maximizing energy efficiency for each time unit.
+To develop a self-sufficient edge computing system powered by PV, capable of dynamically adjusting its **CPU cores** and **frequency** based on **available energy** and **user demand**. 
+
+The system aims to meet **user demand** while **maximizing energy efficiency** for each time unit.
 
 #### Input
 
@@ -22,16 +24,16 @@ To develop a self-sufficient edge computing system powered by photovoltaic (PV) 
 
 #### Goals:
 
-  - **Meet User Demand:** Ensure the system provides the required performance to meet the user demand.
-  - **Maximize Energy Efficiency:** Optimize the use of available energy to prolong system operation and efficiency.
+  - **Meet User Demand:** Ensure the system provides the required **performance** to meet **user demand**.
+  - **Maximize Energy Efficiency:** Optimize the use of energy consumption to prolong system operation and efficiency.
 
 #### Outcome 
 
-A dynamically adaptive edge computing system that efficiently manages its resources based on real-time energy availability and user demand, ensuring sustainable and efficient operation for autonomous vehicles requiring edge computing capabilities.
+A dynamically self-adaptive edge computing system that efficiently manages its resources based on real-time **energy availability** and **user demand**, ensuring sustainable and efficient operation for autonomous vehicles requiring edge computing capabilities.
 
 ## File Structure
 
-```
+```shell
 /src
   |-- MOO4Modelica
   	|-- config.json
@@ -39,12 +41,13 @@ A dynamically adaptive edge computing system that efficiently manages its resour
   	|-- optimize_main.py
   	|-- parallel_computing.py
   	|-- optimization_libraries.py
-  |-- Example_ITSystem
-      |-- ITSystem.mo
-      |-- energy_available_and_user_demand_data.txt
+  |-- OrchestrationWorkflow
+      |-- ITSystem.mo  # Modelica model
+      |-- energy_available_and_user_demand_data.txt  # input data
+      |-- orchestration_config.json  # config file of the orchestration workflow
       |-- orchestrator.py
-      |-- edge_cloud_wrapper.py
-      |-- edge_cloud_configurator.py
+      |-- orchestration_wrapper.py
+      |-- orchestration_configurator.py
 ```
 
 ## Key Components
@@ -53,9 +56,12 @@ A dynamically adaptive edge computing system that efficiently manages its resour
 	* Corresponding file: `ITSystem.mo`
 	* Defines the IT system's parameters, such as `activeCores`, `cpuFrequency`, `availableEnergy`, and `userDemand`.
 	* Simulates energy consumption, performance, and remaining energy.
-
 2. **Orchestrator & Configurator**
-	* Corresponding files: `orchestrator.py`, `edge_cloud_configurator.py`, `edge_cloud_wrapper.py`
+	* Corresponding files: 
+	  * `orchestration_config.json`,
+	  * `orchestrator.py`, 
+	  * `orchestration_wrapper.py`,
+	  * `orchestration_configurator.py`
 	* `orchestrator.py` as the main script to orchestrate the whole process.
 	* Manages the interaction between the optimization framework and the Modelica model.
 	* Executes the adaptive control loop, which adjusts the system parameters based on real-time data to meet user demand and optimize performance.
@@ -84,7 +90,45 @@ A dynamically adaptive edge computing system that efficiently manages its resour
 
 ## Demo
 
-run `python orchestrator.py`
+* set up the configuration in `orchestration_config.json`
+
+```json
+{
+    "DATA_FILE_PATH": "energy_available_and_user_demand_data.txt",
+    "CONFIG_PATH": "config.json",
+    "MODEL_FILE": "ITSystem.mo",
+    "MODEL_NAME": "ITSystem",
+    "SIMULATION_TIME": 100,
+    "START_TIME": 8,
+    "END_TIME": 13,
+    "TIME_UNIT": "hour",
+    "OPTIMIZATION_PARAMETERS": {
+        "activeCores": {
+            "bounds": [1, 4],
+            "type": "int"
+        },
+        "cpuFrequency": {
+            "bounds": [1.0, 3.0],
+            "type": "float"
+        }
+    },
+    "EVALUATION_PARAMETERS": {
+        "performance": "performance",
+        "remaining_energy": "remainingEnergy",
+        "energy_consumption": "energyConsumption"
+    },
+    "INPUT_PARAMETERS": {
+        "available_energy": "availableEnergy",
+        "user_demand": "userDemand"
+    },
+    "CRITERIA": {
+        "GOAL_EXPRESSION": 
+        "evaluation_results['performance'] >= simulation_inputs['user_demand']"
+    }
+}
+```
+
+* run `python orchestrator.py`
 
 ```shell
 Processing hour: 8  # 8 am
