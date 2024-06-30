@@ -16,8 +16,6 @@ The orchestration workflow consists of four main components, besides the Modelic
 
 * `orchestration_config.json`: configuration file for the entire orchestration workflow.
   * It also dynamically adapts the MOO4Modelica config file (`config.py`).
-
-
 * `orchestrator.py`: Coordinates the overall workflow.
   * Initializes components, reads data, runs the optimization, and manages the simulation and evaluation loop.
 * `orchestration_wrapper.py`:  Intermediary between MOO4Modelica and the orchestration workflow. 
@@ -25,9 +23,7 @@ The orchestration workflow consists of four main components, besides the Modelic
 * `orchestration_configurator.py`: Updates configuration based on current context.
   * Prepares and sets parameters for simulation.
 
-
 ## Orchestration Workflow (Flowchart)
-
 ```mermaid
 graph TD
     A[Start] --> B[Read Input Data]
@@ -49,9 +45,6 @@ graph TD
     N --> |Yes| D
     N --> |No| O[End]
 ```
-
-
-
 ## Case Study: Self-adaptive Edge Computing System
 
 ### Objective
@@ -73,7 +66,6 @@ The system aims to meet **user demand** while **remaining energy** ≥ 0 for eac
 
   - **Maximize Energy Efficiency:** Optimize the use of energy consumption to prolong system operation and efficiency.
     - **remaining energy** should be ≥ 0 at the end of simulation
-
 
 ### Outcome 
 
@@ -160,4 +152,3 @@ Hour 8: User demand satisfied with configuration {'activeCores': 4, 'cpuFrequenc
 
 Hour 12: User demand satisfied with configuration {'activeCores': 2, 'cpuFrequency': 1.86}.
 ```
-
