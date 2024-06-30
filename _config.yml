@@ -3,3 +3,6 @@ description: Multi-objective Optimization framework for Modelica
 theme: just-the-docs
 
 url: https://wangzizhe.github.io/MOO4Modelica
+
+mermaid:
+  version: "9.1.3"
