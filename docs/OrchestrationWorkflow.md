@@ -2,6 +2,15 @@
 layout: default
 title: Dynamic Adaptation and Orchestration of Systems with Modelica and MOO4Modelica
 nav_order: 5
+
+<style>
+.mermaid {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+</style>
 ---
 
 # Dynamic Adaptation and Orchestration of Systems with Modelica and MOO4Modelica
@@ -24,6 +33,7 @@ The orchestration workflow consists of four main components, besides the Modelic
   * Prepares and sets parameters for simulation.
 
 ## Orchestration Workflow (Flowchart)
+
 ```mermaid
 graph TD
     A[Start] --> B[Read Input Data]
