@@ -41,9 +41,9 @@ graph TD
     K --> |No| L[Goal Not Satisfied After trying all parameter sets]
     I --> M[Add to Final Report]
     L --> M
-    M --> N{More Time Units?}
-    N --> |Yes| D
-    N --> |No| O[End]
+    M --> N{All Time Units Iterated?}
+    N --> |No| D
+    N --> |Yes| O[End]
 ```
 ## Case Study: Self-adaptive Edge Computing System
 
