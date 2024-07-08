@@ -468,3 +468,7 @@ Configurations in `config.py` have been modified accordingly.
 After the optimization, the Pareto front will show:
 
 ![Pareto Front of the electric driving robot](../assets/MaxMoritz_Pareto_Front.png)
+
+## 3. Electric Car-sharing Systems
+
+Demo: [Modeling Car-sharing Systems using Modelica and Optimization using MOO4Modelica - YouTube](https://www.youtube.com/watch?v=LOc7q_BexsY&feature=youtu.be)

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Dynamic Adaptation and Orchestration of Systems with Modelica and MOO4Modelica
+title: Orchestration Workflow
 nav_order: 5
 ---
 
