@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Usage
+parent: MOO4Modelica
 nav_order: 1
 ---
 

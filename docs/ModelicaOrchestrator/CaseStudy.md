@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Case Study
+parent: ModelicaOrchestrator
 nav_order: 2
 ---
 

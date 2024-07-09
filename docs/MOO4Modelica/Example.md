@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Examples
+parent: MOO4Modelica
 nav_order: 2
 ---
 
