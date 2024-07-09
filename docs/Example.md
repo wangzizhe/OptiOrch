@@ -471,4 +471,4 @@ After the optimization, the Pareto front will show:
 
 ## 3. Electric Car-sharing Systems
 
-Demo: [Modeling Car-sharing Systems using Modelica and Optimization using MOO4Modelica - YouTube](https://www.youtube.com/watch?v=LOc7q_BexsY&feature=youtu.be)
+Demo: [Modeling Electric Car-sharing Systems with Petri nets using Modelica and Optimization using MOO4Modelica - YouTube](https://youtu.be/LOc7q_BexsY)
