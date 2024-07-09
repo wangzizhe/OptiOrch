@@ -56,37 +56,54 @@ A dynamically self-adaptive edge computing system that efficiently manages its r
 
 ```json
 {
-    "DATA_FILE_PATH": "energy_available_and_user_demand_data.txt",
+    "DATA_FILE_PATH": "data/number_of_users.txt",
     "CONFIG_PATH": "config.json",
-    "MODEL_FILE": "ITSystem.mo",
-    "MODEL_NAME": "ITSystem",
-    "SIMULATION_TIME": 100,
-    "START_TIME": 8,
-    "END_TIME": 13,
-    "TIME_UNIT": "hour",
-    "OPTIMIZATION_PARAMETERS": {
-        "activeCores": {
-            "bounds": [1, 4],
-            "type": "int"
-        },
-        "cpuFrequency": {
-            "bounds": [1.0, 3.0],
-            "type": "float"
+    "MODEL_FILE": "CarSharingSystemCaseStudy.mo",
+    "MODEL_NAME": "CarSharingSystemCaseStudy",
+    "SIMULATION_TIME": 86400,
+    "TIME_CONFIG": {
+        "START_TIME": 0,
+        "END_TIME": 86400,
+        "TIME_UNIT": "seconds"
+    },
+    "OBJECTIVES": [
+        {"name": "totalWaitingTime", "maximize": false},
+        {"name": "availableCars", "maximize": true}
+    ],
+    "TUNABLE_PARAMETERS": {
+        "PARAMETERS": ["numCars"],
+        "PARAM_BOUNDS": {
+            "numCars": {
+                "bounds": [5, 15],
+                "type": "int"
+            }
         }
     },
-    "EVALUATION_PARAMETERS": {
-        "performance": "performance",
-        "remaining_energy": "remainingEnergy",
-        "energy_consumption": "energyConsumption"
-    },
     "INPUT_PARAMETERS": {
-        "available_energy": "availableEnergy",
-        "user_demand": "userDemand"
+        "numUsers": "numUsers"
     },
     "CRITERIA": {
-        "GOAL_EXPRESSION": 
-        "evaluation_results['performance'] >= simulation_inputs['user_demand']"
-    }
+        "GOAL_EXPRESSION": "evaluation_results['availableCars'] >= simulation_inputs['numUsers']"
+    },
+    "OPTIMIZATION_CONFIG": {
+        "USE_SINGLE_OBJECTIVE": false,
+        "ALGORITHM_NAME": "nsga2",
+        "POP_SIZE": 5,
+        "N_GEN": 2
+    },
+    "PLOT_CONFIG": {
+        "PLOT_X": "",
+        "PLOT_Y": "",
+        "PLOT_TITLE": "",
+        "ENABLE_PLOT": false
+    },
+    "LIBRARY_CONFIG": {
+        "LOAD_LIBRARIES": true,
+        "LIBRARIES": [
+            {"name": "PNlib-3.0.0", "path": "PNlib-3.0.0/PNlib/package.mo"}
+        ]
+    },
+    "N_JOBS": -1
 }
 ```
 

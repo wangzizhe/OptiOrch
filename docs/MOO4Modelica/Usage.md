@@ -47,7 +47,7 @@ The framework has abstracted all the setup parameters into the file `config.py`.
 
 **Step 1:** Configure global settings in `config.py` 
 
-```json
+```shell
 # Basic settings
 "MODEL_NAME": "SimpleHeatingSystem",
 "MODEL_FILE": "SimpleHeatingSystem.mo",

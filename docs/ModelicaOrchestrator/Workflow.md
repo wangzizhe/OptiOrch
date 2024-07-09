@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Orchestration Workflow
+title: Workflow
 parent: ModelicaOrchestrator
 nav_order: 1
 ---

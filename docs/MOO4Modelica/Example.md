@@ -267,7 +267,7 @@ The feature model will be then saved as `feature_model.json`:
 
 **Step 1:** Configure global settings for the optimization
 
-```json
+```shell
 # Basic settings
 "MODEL_NAME": "SimpleHeatingSystem",
 "MODEL_FILE": "SimpleHeatingSystem.mo",
@@ -387,7 +387,7 @@ Solution 49: Energy = 319668.29, Comfort = 2162.22,
 
 After that, you will see the Pareto front:
 
-![Pareto Front of the simple heating system](../assets/SimpleHeatingSystem_Pareto_Front.png) 
+![Pareto Front of the simple heating system](../../assets/SimpleHeatingSystem_Pareto_Front.png) 
 
 ## Example 2: Electric Driving Robot
 
@@ -426,7 +426,7 @@ Configurations in `config.py` have been modified accordingly.
 
 After the optimization, the Pareto front will show:
 
-![Pareto Front of the electric driving robot](../assets/MaxMoritz_Pareto_Front.png)
+![Pareto Front of the electric driving robot](../../assets/MaxMoritz_Pareto_Front.png)
 
 ## 3. Electric Car-sharing Systems
 
