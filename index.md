@@ -4,7 +4,7 @@ title: Introduction
 nav_order: 1
 ---
 
-# MOO4Modelica + MoOrchestrator
+# MOO4Modelica + ModelicaOrchestrator
 
 **MOO4Modelica:** An optimization framework for Modelica which supports both single- and multi-objective optimization.
 
