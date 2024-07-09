@@ -309,7 +309,7 @@ The feature model will be then saved as `feature_model.json`:
 
 # import libraries that the model needs
 "LIBRARY_CONFIG": {
-    "LOAD_LIBRARIES": true,
+    "LOAD_LIBRARIES": false,
     "LIBRARIES": [
         {"name": "", "path": ""}
     ]
