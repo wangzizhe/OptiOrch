@@ -56,34 +56,39 @@ A dynamically self-adaptive edge computing system that efficiently manages its r
 
 ```json
 {
-    "DATA_FILE_PATH": "data/number_of_users.txt",
+    "DATA_FILE_PATH": "data/energy_available_and_user_demand.txt",
     "CONFIG_PATH": "config.json",
-    "MODEL_FILE": "CarSharingSystemCaseStudy.mo",
-    "MODEL_NAME": "CarSharingSystemCaseStudy",
-    "SIMULATION_TIME": 86400,
+    "MODEL_FILE": "ITSystem.mo",
+    "MODEL_NAME": "ITSystem",
+    "SIMULATION_TIME": 100,
     "TIME_CONFIG": {
-        "START_TIME": 0,
-        "END_TIME": 86400,
-        "TIME_UNIT": "seconds"
+        "START_TIME": 8,
+        "END_TIME": 13,
+        "TIME_UNIT": "hour"
     },
     "OBJECTIVES": [
-        {"name": "totalWaitingTime", "maximize": false},
-        {"name": "availableCars", "maximize": true}
+        {"name": "remainingEnergy", "maximize": true},
+        {"name": "performance", "maximize": true}
     ],
     "TUNABLE_PARAMETERS": {
-        "PARAMETERS": ["numCars"],
+        "PARAMETERS": ["activeCores", "cpuFrequency"],
         "PARAM_BOUNDS": {
-            "numCars": {
-                "bounds": [5, 15],
+            "activeCores": {
+                "bounds": [1, 4],
                 "type": "int"
+            },
+            "cpuFrequency": {
+                "bounds": [1.0, 3.0],
+                "type": "float"
             }
         }
     },
     "INPUT_PARAMETERS": {
-        "numUsers": "numUsers"
+        "available_energy": "availableEnergy",
+        "user_demand": "userDemand"
     },
     "CRITERIA": {
-        "GOAL_EXPRESSION": "evaluation_results['availableCars'] >= simulation_inputs['numUsers']"
+        "GOAL_EXPRESSION": "evaluation_results['performance'] >= simulation_inputs['user_demand']"
     },
     "OPTIMIZATION_CONFIG": {
         "USE_SINGLE_OBJECTIVE": false,
@@ -98,9 +103,9 @@ A dynamically self-adaptive edge computing system that efficiently manages its r
         "ENABLE_PLOT": false
     },
     "LIBRARY_CONFIG": {
-        "LOAD_LIBRARIES": true,
+        "LOAD_LIBRARIES": false,
         "LIBRARIES": [
-            {"name": "PNlib-3.0.0", "path": "PNlib-3.0.0/PNlib/package.mo"}
+            {"name": "", "path": ""}
         ]
     },
     "N_JOBS": -1
