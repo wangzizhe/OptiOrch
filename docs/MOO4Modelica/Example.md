@@ -119,7 +119,7 @@ SimpleHeatingSystem
 
 The feature model will be then saved as `feature_model.json`:
 
-```json
+```shell
 {
     "name": "SimpleHeatingSystem",
     "children": [
