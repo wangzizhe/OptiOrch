@@ -114,6 +114,8 @@ A dynamically self-adaptive edge computing system that efficiently manages its r
 
 **Step 2:** run `python orchestrator.py`:
 
+Finally, you will see the final report:
+
 ```shell
 Processing hour: 8  # 8 am
 Parameters set: {'activeCores': 4, 'cpuFrequency': 2.47}
@@ -128,9 +130,13 @@ Performance: 372.13  # # at 12 am user demand is medium, the evaluated performan
 User demand satisfied.
 
 Final Report:
-Hour 8: User demand satisfied with configuration {'activeCores': 4, 'cpuFrequency': 2.47}.
+Hour 8: User demand satisfied with configuration {'activeCores': 4, 'cpuFrequency': 2.5}.
 
 ...
 
-Hour 12: User demand satisfied with configuration {'activeCores': 2, 'cpuFrequency': 1.86}.
+Hour 12: User demand satisfied with configuration {'activeCores': 2, 'cpuFrequency': 1.8}.
 ```
+
+You can also visualize the final result:
+
+<img src="../../assets/ModelicaOrch_result.png" alt="result" style="zoom:80%;" />
