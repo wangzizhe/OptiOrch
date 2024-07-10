@@ -10,7 +10,7 @@ This shows an example of using OMPython to simulate a Modelica model
 
 OMPython: OpenModelica Python Interface
 
-#### Requirements:
+### Requirements:
 
 - Python (add to PATH)
 - OpenModelica (add to PATH)
@@ -24,11 +24,11 @@ This is what the PATH looks like:
 %USERPROFILE%\OpenModelica1.22.3-64bit\bin
 ```
 
-#### Example:
+### Example:
 
 Use Python script [Simulate_BouncingBall.py](./Simulate_BouncingBall.py) to simulate the Modelica model [BouncingBall.mo](./BouncingBall.mo)
 
-#### Procedure:
+### Procedure:
 
 Run `python Simulate_BouncingBall.py`
 
