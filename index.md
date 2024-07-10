@@ -8,7 +8,7 @@ nav_order: 1
 
 A toolchain which integrates the optimization framework "MOO4Modelica" and the orchestration workflow "ModelicaOrch" to achieve optimal control in Modelica-based simulations.
 
-GitLab Repo: [https://git-st.inf.tu-dresden.de/wang/MOO4Modelica](https://git-st.inf.tu-dresden.de/wang/MOO4Modelica)
+GitLab Repo: [https://git-st.inf.tu-dresden.de/wang/OptiOrch](https://git-st.inf.tu-dresden.de/wang/OptiOrch)
 
 <img src="./assets/MOO4Modelica.png" alt="framework" style="zoom:80%;" />
 
