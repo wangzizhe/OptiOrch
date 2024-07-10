@@ -4,17 +4,15 @@ title: Introduction
 nav_order: 1
 ---
 
-# MOO4Modelica + ModelicaOrchestrator
+# OptiOrch
 
-**MOO4Modelica:** An optimization framework for Modelica which supports both single- and multi-objective optimization.
-
-**ModelicaOrchestrator:** An orchestration workflow for Modelica.
+A toolchain which integrates the optimization framework "MOO4Modelica" and the orchestration workflow "ModelicaOrch" to achieve optimal control in Modelica-based simulations.
 
 GitLab Repo: [https://git-st.inf.tu-dresden.de/wang/MOO4Modelica](https://git-st.inf.tu-dresden.de/wang/MOO4Modelica)
 
-<img src="./assets/MOO4Modelica_framework.png" alt="framework" style="zoom:80%;" />
+<img src="./assets/MOO4Modelica.png" alt="framework" style="zoom:80%;" />
 
-<img src="./assets/ModelicaOrchestrator.png" alt="workflow" style="zoom:80%;" />
+<img src="./assets/ModelicaOrch.png" alt="workflow" style="zoom:80%;" />
 
 #### Structure:
 

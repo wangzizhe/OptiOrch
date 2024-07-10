@@ -6,3 +6,4 @@ has_children: true
 ---
 
 # MOO4Modelica
+The optimization framework which supports both single- and multi-objective parameter optimization.

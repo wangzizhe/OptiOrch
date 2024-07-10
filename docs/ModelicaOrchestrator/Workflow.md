@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Workflow
-parent: ModelicaOrchestrator
+parent: ModelicaOrch
 nav_order: 1
 ---
 
@@ -25,7 +25,6 @@ The orchestration workflow consists of four main components, besides the Modelic
   * Prepares and sets parameters for simulation.
 
 ## Orchestration Workflow (Flowchart)
-
 ```mermaid
 graph TD
     A[Start] --> B[Read Input Data]

@@ -1,7 +1,7 @@
-# A Multi-objective Optimization Framework and Orchestration Workflow for Modelica.
+# A toolchain which integrates the optimization framework "MOO4Modelica" and the orchestration workflow "ModelicaOrch" to achieve optimal control in Modelica-based simulations.
 
 GitHub Page: https://wangzizhe.github.io/MOO4Modelica
 
-<img src="./assets/MOO4Modelica_framework.png" alt="Framework" style="zoom:80%;" />
+<img src="./assets/MOO4Modelica.png" alt="Framework" style="zoom:80%;" />
 
-<img src="./assets/ModelicaOrchestrator.png" alt="Workflow" style="zoom:80%;" />
+<img src="./assets/ModelicaOrch.png" alt="Workflow" style="zoom:80%;" />
