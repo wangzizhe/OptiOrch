@@ -89,7 +89,7 @@ The framework has abstracted all the setup parameters into the file `config.py`.
 
 # import libraries that the model needs
 "LIBRARY_CONFIG": {
-    "LOAD_LIBRARIES": true,
+    "LOAD_LIBRARIES": false,
     "LIBRARIES": [
         {"name": "", "path": ""}
     ]
