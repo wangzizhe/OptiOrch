@@ -139,4 +139,4 @@ Hour 12: User demand satisfied with configuration {'activeCores': 2, 'cpuFrequen
 
 You can also visualize the final result:
 
-<img src="../../assets/ModelicaOrch_result.png" alt="result" style="zoom:80%;" />
+<img src="../../assets/ModelicaOrch_result.png" alt="result" style="zoom:100%;" />
