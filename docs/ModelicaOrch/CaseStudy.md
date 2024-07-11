@@ -54,7 +54,7 @@ A dynamically self-adaptive edge computing system that efficiently manages its r
 
 **Step 1:** Set up the configuration in `orchestration_config.json`:
 
-```json
+```shell
 {
     "DATA_FILE_PATH": "data/energy_available_and_user_demand.txt",
     "CONFIG_PATH": "config.json",
@@ -68,7 +68,7 @@ A dynamically self-adaptive edge computing system that efficiently manages its r
     },
     "OBJECTIVES": [
         {"name": "remainingEnergy", "maximize": true},
-        {"name": "performance", "maximize": true}
+        {"name": "performance", "maximize": true}  # computing power the system provides 
     ],
     "TUNABLE_PARAMETERS": {
         "PARAMETERS": ["activeCores", "cpuFrequency"],
@@ -85,7 +85,7 @@ A dynamically self-adaptive edge computing system that efficiently manages its r
     },
     "INPUT_PARAMETERS": {
         "available_energy": "availableEnergy",
-        "user_demand": "userDemand"
+        "user_demand": "userDemand"  # computing power the user needs
     },
     "CRITERIA": {
         "GOAL_EXPRESSION": "evaluation_results['performance'] >= simulation_inputs['user_demand']"
@@ -118,15 +118,15 @@ Finally, you will see the final report:
 
 ```shell
 Processing hour: 8  # 8 am
-Parameters set: {'activeCores': 4, 'cpuFrequency': 2.47}
-Performance: 988.34  # at 8 am user demand is high, the evaluated performance is 988.34 which satisfies user demand
+Parameters set: {'activeCores': 4, 'cpuFrequency': 3.00}
+Performance: 930  # at 8 am user demand is high, the evaluated performance is 930 which satisfies user demand
 User demand satisfied.
 
 ...
 
 Processing hour: 12  # 12 am
-Parameters set: {'activeCores': 2, 'cpuFrequency': 1.86}
-Performance: 372.13  # # at 12 am user demand is medium, the evaluated performance is 372.13 which satisfies user demand
+Parameters set: {'activeCores': 2, 'cpuFrequency': 1.80}
+Performance: 372  # # at 12 am user demand is medium, the evaluated performance is 372 which satisfies user demand
 User demand satisfied.
 
 Final Report:
