@@ -27,22 +27,21 @@ The orchestration workflow consists of four main components, besides the Modelic
 ## Orchestration Workflow (Flowchart)
 ```mermaid
 graph TD
-    A[Start] --> B[Read Input Data]
-    B --> C[Iterate Over Time Units]
-    C --> D[Update Configuration: Based on the read data] --> E1[Orchestrator: Call Configurator and Wrapper]
-    E1 --> E2[Configurator: Update Configuration for Optimization]
-    E2 --> E[Run Optimization: Using MOO4Modelica to find the best parameters]
-    E --> F[Get Parameter Sets: Retrieve optimized parameter sets from results] --> F1[Wrapper: Manage Optimization Results]
-    F1 --> G[Simulate and Evaluate Parameters: Model simulation with parameter sets to check whether goals are satisfied]
-    G --> H{Goal Satisfied?}
-    H --> |Yes| I[Goal Satisfied with Corresponding Parameters]
-    H --> |No| J[Try Next Parameter Set: Repeat Simulation and Evaluation]
-    J --> K{Any Parameter Sets Left?}
-    K --> |Yes| G
-    K --> |No| L[Goal Not Satisfied After trying all parameter sets]
-    I --> M[Add to Final Report]
-    L --> M
-    M --> N{All Time Units Iterated?}
-    N --> |No| D
-    N --> |Yes| O[End]
+    A[OptiOrch] --> B[Read Input Data]
+    B --> C[Adaptive Control Loop: Iteration Over Time Units] --> D1[Orchestrator: Call Configurator and Wrapper]
+    D1 --> D2[Configurator: Update Configuration for Optimization]
+    D2 --> D[MOO4Modelica: Find the Best Parameter Sets]
+    D --> E[Wrapper: Retrieve Optimized Parameter Sets] --> E1[Wrapper: Assign Optimized Parameter Set to the Model]
+    E1 --> F[Configurator: Simulate and Evaluate Parameter Sets]
+    F --> G{Goal Satisfied?}
+    G --> |Yes| H[Goal Satisfied with Current Optimized Parameter Set]
+    G --> |No| I[Try Next Optimized Parameter Set]
+    I --> J{Any Parameter Sets Left?}
+    J --> |Yes| F
+    J --> |No| K[Goal Not Satisfied After trying All Parameter Sets]
+    H --> L[Add to Final Report]
+    K --> L
+    L --> M{All Time Units Iterated?}
+    M --> |No| C
+    M --> |Yes| N[Final Report]
 ```
