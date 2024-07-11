@@ -5,7 +5,7 @@ parent: ModelicaOrch
 nav_order: 1
 ---
 
-# Dynamic Adaptation and Orchestration of Systems with Modelica and MOO4Modelica
+# Dynamic Adaptation and Orchestration of Modelica Simulation
 
 An orchestration workflow for simulating and optimizing self-adaptive systems with MOO4Modelica.  
 
