@@ -63,7 +63,7 @@ A dynamically self-adaptive edge computing system that efficiently manages its r
     "SIMULATION_TIME": 100,
     "TIME_CONFIG": {
         "START_TIME": 8,
-        "END_TIME": 13,
+        "END_TIME": 12,
         "TIME_UNIT": "hour"
     },
     "OBJECTIVES": [
@@ -88,7 +88,8 @@ A dynamically self-adaptive edge computing system that efficiently manages its r
         "user_demand": "userDemand"  # computing power the user needs
     },
     "CRITERIA": {
-        "GOAL_EXPRESSION": "evaluation_results['performance'] >= simulation_inputs['user_demand']"
+        "GOAL_EXPRESSION_1": "evaluation_results['performance'] >= simulation_inputs['user_demand']",
+        "GOAL_EXPRESSION_2": "evaluation_results['remainingEnergy'] >= 0"
     },
     "OPTIMIZATION_CONFIG": {
         "USE_SINGLE_OBJECTIVE": false,
@@ -140,3 +141,9 @@ Hour 12: User demand satisfied with configuration {'activeCores': 2, 'cpuFrequen
 You can also visualize the final result:
 
 <img src="../../assets/ModelicaOrch_result.png" alt="result" style="zoom:100%;" />
+
+At 8 AM,  neither `GOAL_EXPRESSION_1` nor `GOAL_EXPRESSION_2` is satisfied. 
+
+At 9 AM, `GOAL_EXPRESSION_1` is not satisfied. 
+
+From 10 AM to 12 AM, both goals are satisfied. 
