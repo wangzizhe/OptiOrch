@@ -6,7 +6,7 @@ nav_order: 1
 
 # OptiOrch
 
-A toolchain which integrates the optimization framework "MOO4Modelica" and the orchestration workflow "ModelicaOrch" to achieve optimal control in Modelica-based simulations.
+A toolchain that integrates the optimization framework "MOO4Modelica" and the orchestration workflow "ModelicaOrch" to achieve optimal control in Modelica-based simulations.
 
 GitLab Repo: [https://git-st.inf.tu-dresden.de/wang/OptiOrch](https://git-st.inf.tu-dresden.de/wang/OptiOrch)
 
@@ -38,7 +38,7 @@ GitLab Repo: [https://git-st.inf.tu-dresden.de/wang/OptiOrch](https://git-st.inf
 
 * **Feature Model Transformation**
   * `modelica.g4`: an ANTLR4 grammar for Modelica files
-  * `parse_modelica.py`: parse a Modelica model to extract it components and their parameters
+  * `parse_modelica.py`: parse a Modelica model to extract its components and their parameters
   * `feature_model.py`: create a feature model and add the extracted components
 * **Optimization Operation**
   * `config.json` & `config.py`: global settings and configurations

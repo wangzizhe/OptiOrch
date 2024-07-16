@@ -241,7 +241,7 @@ Parameters set: {'Q_max': 2044.53, 'T_set': 305.47}
 ...
 ```
 
-The simulation is runing:
+The simulation is running:
 
 ```shell
 Simulation results: {'energy': 344482.35, 'comfort': 1873.97}
@@ -257,11 +257,11 @@ OMC session closed successfully.
 ...
 ```
 
-You will see the results at the end of simulation like this:
+You will see the results at the end of the simulation like this:
 
 ```shell
 ...
-   100 |     5000 |     50 |  0.0031202395 |             f
+| 100 | 5000 | 50 | 0.0031202395 | f |
 Optimization Results:
 Solution 0: Energy = 1683944.96, Comfort = 3074.81,
 Solution 1: Energy = 118249.77, Comfort = 1817.60,
@@ -317,7 +317,7 @@ After the optimization, the Pareto front will show:
 
 ## 3. Electric Car-sharing Systems
 
-The system should optimize its **number of cars** which feeds into the system to find the minimized **total waiting time** (when user comes, if no cars are available, the user waits for a while, then the user gets a car if it is available or the user leaves without getting a car) and **total charging time**.
+The system should optimize its **number of cars** which feeds into the system to find the minimized **total waiting time** (when the user comes, if no cars are available, the user waits for a while, then the user gets a car if it is available or the user leaves without getting a car) and **total charging time**.
 
 <table>
   <thead>

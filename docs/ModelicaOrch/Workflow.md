@@ -20,7 +20,7 @@ The orchestration workflow consists of four main components, besides the Modelic
 * `orchestrator.py`: Coordinates the overall workflow.
   * Initializes components, reads data, runs the optimization, and manages the simulation and evaluation loop.
 * `orchestration_wrapper.py`:  Intermediary between MOO4Modelica and the orchestration workflow. 
-  * Manages the optimization process using MOO4Modelica, handles optimization results and provides parameter sets for simulation.
+  * Manages the optimization process using MOO4Modelica, handles optimization results, and provides parameter sets for simulation.
 * `orchestration_configurator.py`: Updates configuration based on current status.
   * Prepares and sets parameters for simulation.
 
@@ -38,7 +38,7 @@ graph TD
     G --> |No| I[Try Next Optimized Parameter Set]
     I --> J{Any Parameter Sets Left?}
     J --> |Yes| F
-    J --> |No| K[Goal Not Satisfied After trying All Parameter Sets]
+    J --> |No| K[Goal Not Satisfied After Trying All Parameter Sets]
     H --> L[Add to Final Report]
     K --> L
     L --> M{All Time Units Iterated?}

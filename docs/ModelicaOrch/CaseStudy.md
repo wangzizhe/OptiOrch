@@ -15,17 +15,17 @@ The system aims to meet **user demand** while **remaining energy** ≥ 0 for eac
 
 ### Input
 
-* Energy available (time unit: hour)
+* The energy available (time unit: hour)
 
 * User demand (time unit: hour)
 
 ### Goals:
 
-  - **Meet User Demand:** Ensure the system provides the required **performance** (computing resource the system can provides) to meet **user demand** (computing resource the user needs). 
-    - User demand satisfied when **performance** ≥ **user demand**.
+  - **Meet User Demand:** Ensure the system provides the required **performance** (computing resource the system can provide) to meet **user demand** (computing resource the user needs). 
+    - User demand is satisfied when **performance** ≥ **user demand**.
 
   - **Maximize Energy Efficiency:** Optimize the use of energy consumption to prolong system operation and efficiency.
-    - **remaining energy** should be ≥ 0 at the end of simulation
+    - **remaining energy** should be ≥ 0 at the end of the simulation
 
 ### Outcome 
 
@@ -126,7 +126,7 @@ User demand satisfied.
 
 Processing hour: 12  # 12 am
 Parameters set: {'activeCores': 2, 'cpuFrequency': 1.80}
-Performance: 372  # # at 12 am user demand is medium, the evaluated performance is 372 which satisfies user demand
+Performance: 372  # at 12 am user demand is medium, the evaluated performance is 372 which satisfies user demand
 User demand satisfied.
 
 Final Report:
